@@ -1,4 +1,30 @@
-// Function to import characters
+document.addEventListener('DOMContentLoaded', () => {
+    // Select an existing UI container where you want the button to appear
+    const container = document.querySelector('#toolbar') || document.querySelector('#character-drawer') || document.body;
+
+    if (container) {
+        // Create the button manually
+        const button = document.createElement('button');
+        button.textContent = 'Import Character';
+        button.style.backgroundColor = '#4CAF50';
+        button.style.color = 'white';
+        button.style.padding = '10px';
+        button.style.margin = '5px';
+        button.style.border = 'none';
+        button.style.borderRadius = '5px';
+        button.style.cursor = 'pointer';
+
+        container.appendChild(button); // Add the button to the container
+        console.log('Button added successfully.');
+
+        // Link the button to the import function
+        button.onclick = importCharacterFromWeb;
+    } else {
+        console.error('UI container for button not found.');
+    }
+});
+
+// Function to import a character
 async function importCharacterFromWeb() {
     try {
         const link = prompt('Enter the chub.ai character link:');
@@ -22,26 +48,9 @@ async function importCharacterFromWeb() {
             throw new Error('Unable to extract character data.');
         }
 
-        const character = {
-            name: characterName,
-            description: characterDescription
-        };
-
-        console.log('Character imported:', character);
-        alert(`Character "${character.name}" imported successfully!`);
+        alert(`Character "${characterName}" imported successfully!`);
     } catch (error) {
         console.error('Error importing character:', error);
-        alert('Failed to import character. See console for details.');
+        alert('Failed to import character. Check console for details.');
     }
 }
-
-// Attach the behavior to the button manually
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('button[name="Import Character"]');
-    if (button) {
-        button.onclick = importCharacterFromWeb;
-        console.log('Import Character button linked successfully.');
-    } else {
-        console.error('Could not find the Import Character button.');
-    }
-});
