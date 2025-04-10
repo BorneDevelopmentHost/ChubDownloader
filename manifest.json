@@ -1,17 +1,14 @@
 {
-    "name": "Chub.ai Character Importer",
-    "version": "1.0.0",
-    "description": "An extension for SillyTavern that allows users to import characters from chub.ai using a direct link.",
+    "display_name": "Chub.ai Character Importer",
+    "loading_order": 1,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
     "author": "Borne",
-    "permissions": [
-        "fetch"
-    ],
-    "ui": {
-        "buttons": [
-            {
-                "name": "Import Character",
-                "action": "importCharacterFromWeb"
-            }
-        ]
-    }
+    "version": "1.0.0",
+    "homePage": "https://github.com/BorneDevelopmentHost/ChubDownloader",
+    "auto_update": true,
+    "i18n": {}
+    
 }
