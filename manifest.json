@@ -1,0 +1,9 @@
+{
+    "name": "Chub.ai Downloader",
+    "version": "1.0",
+    "description": "Download and import characters from chub.ai directly into SillyTavern.",
+    "main": "chub-downloader.js",
+    "author": "Private",
+    "tags": ["character", "import", "chub.ai"]
+  }
+  
